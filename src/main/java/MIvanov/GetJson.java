@@ -23,8 +23,8 @@ public class GetJson {
 
             connection.setRequestMethod("GET");
             connection.setUseCaches(false);
-            connection.setConnectTimeout(2500);
-            connection.setReadTimeout(2500);
+            connection.setConnectTimeout(25000000);
+            connection.setReadTimeout(25000000);
 
             connection.connect();
 

@@ -15,15 +15,17 @@ public class Musician {
         return name;
     }
 
-    public void setName(String name) {
+    public Musician setName(String name) {
         this.name = name;
+        return null;
     }
 
     public ArrayList getAlbums() {
         return Albums;
     }
 
-    public void setAlbums(ArrayList albums) {
+    public Musician setAlbums(ArrayList albums) {
         Albums = albums;
+        return null;
     }
 }
