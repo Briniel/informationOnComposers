@@ -25,8 +25,7 @@ public class Artist {
             String name = (String) nameArtist.get("name");
 
             ArrayList album = new Albums().getAlbums(name);
-            musician[i] = new Musician().setName(name);
-            musician[i] = new Musician().setAlbums(album);
+            musician[i] = new Musician(name, album);
         }
 
         return musician;

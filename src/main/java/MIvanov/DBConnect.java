@@ -9,7 +9,7 @@ import java.sql.*;
 
 public class DBConnect {
 
-    private int ID = 5;
+    private int ID = 0;
 
     private static Connection connectDatabase() {
         Connection c;
@@ -57,8 +57,10 @@ public class DBConnect {
         String sql;
 
         stmt = selectC.createStatement();
-        sql = "INSERT INTO table_name (ID,name_artist,album) VALUES (" + ID + ",'" + nameArtist + "','" + nameAlbum + "');";
+        sql = "INSERT INTO table_name (ID, name_artist, album) VALUES (" + ID + ",'" + nameArtist + "','" + nameAlbum + "');";
         stmt.executeUpdate(sql);
+        stmt.close();
+        selectC.commit();
         System.out.println("-- Records created successfully");
 //        closeConnect();
         ID++;

@@ -9,23 +9,26 @@ import java.util.ArrayList;
 
 public class Musician {
     private String name;
-    private ArrayList Albums;
+    private ArrayList albums;
+
+    public Musician(String name, ArrayList albums) {
+        this.name = name;
+        this.albums = albums;
+    }
 
     public String getName() {
         return name;
     }
 
-    public Musician setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return null;
     }
 
     public ArrayList getAlbums() {
-        return Albums;
+        return albums;
     }
 
-    public Musician setAlbums(ArrayList albums) {
-        Albums = albums;
-        return null;
+    public void setAlbums(ArrayList albums) {
+        this.albums = albums;
     }
 }

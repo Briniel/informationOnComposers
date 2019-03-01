@@ -8,9 +8,14 @@ import java.sql.SQLException;
 public class App {
 
     public static void main(String[] args) throws SQLException {
-//        Artist artist = new Artist();
-//        System.out.println(artist.getArtist().length);
+        Musician[] musicians = new Artist().getArtist();
 
-        new DBConnect().INSERT("werwerwer", "werwerwewwerwe");
+        for (int i = 0; i < musicians.length; ++i) {
+            musicians[i].getName();
+        }
+
+//        new DBConnect().INSERT("werwerwer", "werwerwewwerwe");
+
+
     }
 }
