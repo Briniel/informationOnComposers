@@ -11,6 +11,6 @@ public class App {
 //        Artist artist = new Artist();
 //        System.out.println(artist.getArtist().length);
 
-        new DBConnect().SELECT("tewt");
+        new DBConnect().INSERT("werwerwer", "werwerwewwerwe");
     }
 }

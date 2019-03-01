@@ -9,6 +9,8 @@ import java.sql.*;
 
 public class DBConnect {
 
+    private int ID = 5;
+
     private static Connection connectDatabase() {
         Connection c;
         try {
@@ -28,7 +30,7 @@ public class DBConnect {
         return null;
     }
 
-    private static void closrConnect() throws SQLException {
+    private static void closeConnect() throws SQLException {
         connectDatabase().close();
     }
 
@@ -46,8 +48,22 @@ public class DBConnect {
         stmt.close();
         selectC.commit();
         System.out.println("-- Operation SELECT done successfully");
-        closrConnect();
+        closeConnect();
     }
+
+    public void INSERT(String nameArtist, String nameAlbum) throws SQLException {
+        Connection selectC = connectDatabase();
+        Statement stmt;
+        String sql;
+
+        stmt = selectC.createStatement();
+        sql = "INSERT INTO table_name (ID,name_artist,album) VALUES (" + ID + ",'" + nameArtist + "','" + nameAlbum + "');";
+        stmt.executeUpdate(sql);
+        System.out.println("-- Records created successfully");
+//        closeConnect();
+        ID++;
+    }
+
 
 
 }
