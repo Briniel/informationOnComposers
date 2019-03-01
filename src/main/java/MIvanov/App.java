@@ -11,11 +11,9 @@ public class App {
         Musician[] musicians = new Artist().getArtist();
 
         for (int i = 0; i < musicians.length; ++i) {
-            musicians[i].getName();
+            for (int a = 0; a < musicians[i].getAlbums().size(); ++a) {
+                new DBConnect().INSERT(musicians[i].getName(), (String) musicians[i].getAlbums().get(a));
+            }
         }
-
-//        new DBConnect().INSERT("werwerwer", "werwerwewwerwe");
-
-
     }
 }

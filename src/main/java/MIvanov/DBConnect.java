@@ -9,7 +9,15 @@ import java.sql.*;
 
 public class DBConnect {
 
-    private int ID = 0;
+    private static int ID = 0;
+
+    private int getID() {
+        return ID;
+    }
+
+    private void setID(int ID) {
+        this.ID = ID;
+    }
 
     private static Connection connectDatabase() {
         Connection c;
@@ -18,7 +26,6 @@ public class DBConnect {
             c = DriverManager
                     .getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "admin");
             c.setAutoCommit(false);
-            System.out.println("-- Opened database successfully");
 
             return c;
         } catch (Exception e) {
@@ -26,7 +33,6 @@ public class DBConnect {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
             System.exit(0);
         }
-        System.out.println("-- All Operations done successfully");
         return null;
     }
 
@@ -47,7 +53,6 @@ public class DBConnect {
         rs.close();
         stmt.close();
         selectC.commit();
-        System.out.println("-- Operation SELECT done successfully");
         closeConnect();
     }
 
@@ -55,15 +60,15 @@ public class DBConnect {
         Connection selectC = connectDatabase();
         Statement stmt;
         String sql;
+        int id = getID();
 
         stmt = selectC.createStatement();
-        sql = "INSERT INTO table_name (ID, name_artist, album) VALUES (" + ID + ",'" + nameArtist + "','" + nameAlbum + "');";
+        sql = "INSERT INTO table_name (ID, name_artist, album) VALUES (" + id + ",'" + nameArtist.replaceAll("'", "") + "','" + nameAlbum.replaceAll("'", "") + "');";
         stmt.executeUpdate(sql);
         stmt.close();
         selectC.commit();
-        System.out.println("-- Records created successfully");
-//        closeConnect();
-        ID++;
+        selectC.close();
+        setID(++id);
     }
 
 
