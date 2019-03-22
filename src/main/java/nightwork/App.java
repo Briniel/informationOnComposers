@@ -1,7 +1,7 @@
-package MIvanov;
+package nightwork;
 
-import MIvanov.dbo.Services.UserServices;
-import MIvanov.dbo.Table.ArtistTable;
+import nightwork.dbo.services.UserServices;
+import nightwork.dbo.table.ArtistTable;
 
 /**
  * Hello world!
@@ -17,7 +17,7 @@ public class App {
                 ArtistTable artistTable = new ArtistTable(musicians[i].getName(), (String) musicians[i].getAlbums().get(a));
                 userServices.saveArtist(artistTable);
             }
-        }   
+        }
 
     }
 }

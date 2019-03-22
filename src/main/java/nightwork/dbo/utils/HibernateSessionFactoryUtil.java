@@ -1,6 +1,6 @@
-package MIvanov.dbo.Utils;
+package nightwork.dbo.utils;
 
-import MIvanov.dbo.Table.ArtistTable;
+import nightwork.dbo.table.ArtistTable;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;

@@ -1,4 +1,4 @@
-package MIvanov.dbo.Table;
+package nightwork.dbo.table;
 
 import javax.persistence.*;
 

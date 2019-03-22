@@ -1,7 +1,7 @@
-package MIvanov.dbo.Services;
+package nightwork.dbo.services;
 
-import MIvanov.dbo.Table.ArtistTable;
-import MIvanov.dbo.dao.UserDao;
+import nightwork.dbo.table.ArtistTable;
+import nightwork.dbo.dao.UserDao;
 
 import java.util.List;
 

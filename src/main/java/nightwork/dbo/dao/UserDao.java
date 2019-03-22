@@ -1,8 +1,8 @@
-package MIvanov.dbo.dao;
+package nightwork.dbo.dao;
 
 
-import MIvanov.dbo.Table.ArtistTable;
-import MIvanov.dbo.Utils.HibernateSessionFactoryUtil;
+import nightwork.dbo.table.ArtistTable;
+import nightwork.dbo.utils.HibernateSessionFactoryUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
